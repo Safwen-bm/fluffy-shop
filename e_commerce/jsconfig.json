@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",       // <-- root of your project
+    "paths": {
+      "@/*": ["app/*"]   // <-- map @/ to your app folder
+    },
+    "jsx": "react-jsx",
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true
+  }
+}

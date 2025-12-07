@@ -1,0 +1,22 @@
+# Environment
+.env
+.env.local
+
+# Database
+.tmp/
+data.db
+*.db
+
+# Build
+.build/
+dist/
+
+# Cache
+.cache/
+
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
