@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from 'react';
 import ProductApis from '../_utils/ProductApis';
-import ProductItem from '../_components/ProductItem';
+import ToyItem from '../_components/ToyItem';  // ← NOW USING TOYITEM
 import { Search, Package, Sparkles, Star } from 'lucide-react';
 
 export default function Toys() {
@@ -15,7 +15,6 @@ export default function Toys() {
   useEffect(() => {
     ProductApis.getLatestProducts().then(res => {
       const all = res.data.data || [];
-      // Filter toys & food (you can adjust category names later)
       const toysAndFood = all.filter(p => {
         const cat = p.category?.toLowerCase();
         return cat?.includes('toy') || cat?.includes('food') || cat?.includes('accessory');
@@ -88,7 +87,7 @@ export default function Toys() {
           Showing <span className="font-bold text-amber-600">{filtered.length}</span> premium items
         </p>
 
-        {/* Grid */}
+        {/* Grid — NOW USING TOYITEM */}
         {filtered.length === 0 ? (
           <div className="text-center py-20">
             <Package className="w-24 h-24 text-gray-300 mx-auto mb-6" />
@@ -97,7 +96,7 @@ export default function Toys() {
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
             {filtered.map((product) => (
-              <ProductItem key={product.documentId} product={product} />
+              <ToyItem key={product.documentId} product={product} />
             ))}
           </div>
         )}
