@@ -16,6 +16,10 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
+        <head>
+          <link rel="icon" href="/paw.png" />
+          <title>Fluffy Shop</title>
+        </head>
         <body className={`${roboto.variable} antialiased`}>
           <CartProvider>
             <Header />
